@@ -18,6 +18,7 @@ namespace ConsoleApp_Telos_XO
         static int choice; //This holds the choice at which position user want to mark   
         // The flag veriable checks who has won if it's value is 1 then some one has won the match if -1 then Match has Draw if 0 then match is still running  
         static int flag = 0;
+        static bool bingo = false;
         static void Main(string[] args)
         {
             do 
@@ -206,26 +207,27 @@ namespace ConsoleApp_Telos_XO
                     CheckRowOrColl(ref counterOf_X_ROW, ref counterOf_O_ROW, arr2[ii]);
                 }
                 else if ((counterOf_X_ROW == matrixNum) || (counterOf_O_ROW == matrixNum))
-                    result = 1;
+                { result = 1; bingo = true; }
                 else result = (0);
             }
             #endregion
 
             #region COLUMNS
+            if(!bingo)
             for (int ii = 1; ii < (arr2.Length - 1); ii++)
             {
-                if ((counterOf_X_COLL < matrixNum) && (counterOf_O_COLL < matrixNum))
-                {
-                    CheckRowOrColl(ref counterOf_X_COLL, ref counterOf_O_COLL, arr2[ii]);
-                }
-                else if ((counterOf_X_COLL == matrixNum) || (counterOf_O_COLL == matrixNum))
-                    result = 1;
-                else result = (0);
+                    if ((counterOf_X_COLL < matrixNum) && (counterOf_O_COLL < matrixNum))
+                    {
+                        CheckRowOrColl(ref counterOf_X_COLL, ref counterOf_O_COLL, arr2[ii]);
+                    }
+                    else if ((counterOf_X_COLL == matrixNum) || (counterOf_O_COLL == matrixNum))
+                    { result = 1; bingo = true;}
+                    else result = (0);
             }
             #endregion
 
             #region Left Diagonal
-            
+            if(!bingo)
             for (int ii = 1; ii < (arr2.Length - 1); ii++)
             {
                 if (counterr_Diagonal<matrixNum)
@@ -235,14 +237,16 @@ namespace ConsoleApp_Telos_XO
                     else if ((ii + matrixNum) <= (arr2.Length - 1)) { ii = tempIndex_Diagonal = (ii + matrixNum); }
                 
                     if (arr2[tempIndex_Diagonal].Equals("X"))
-                    { counterOf_X_Diagonal++; }
+                    { 
+                        counterOf_X_Diagonal++;
+                    }
                     else if (arr2[tempIndex_Diagonal].Equals("O"))
                     { counterOf_O_Diagonal++; }
                     counterr_Diagonal++;
                 }
-                if((counterOf_X_Diagonal == matrixNum) || (counterOf_O_Diagonal == matrixNum))
-                    result = 1;
-                else result = (0);
+                    if ((counterOf_X_Diagonal == matrixNum) || (counterOf_O_Diagonal == matrixNum))
+                    { result = 1;  bingo = true;}
+                    else result = (0);
             }
             #endregion
 
@@ -251,6 +255,7 @@ namespace ConsoleApp_Telos_XO
             tempIndex_Diagonal = 0;
             counterOf_X_Diagonal = 0;
             counterOf_O_Diagonal = 0;
+            if(!bingo)
             for (int ii = matrixNum; ii < (arr2.Length - 1); ii++)
             {
                 if (counterr_Diagonal < matrixNum)
@@ -265,19 +270,20 @@ namespace ConsoleApp_Telos_XO
                     { counterOf_O_Diagonal++; }
                     counterr_Diagonal++;
                 }
-                if ((counterOf_X_Diagonal == matrixNum) || (counterOf_O_Diagonal == matrixNum))
-                    result = 1;
-                else result = (0);
+                    if ((counterOf_X_Diagonal == matrixNum) || (counterOf_O_Diagonal == matrixNum))
+                    { result = 1; bingo = true; }
+                    else result = (0);
             }
             #endregion
 
-            //if(counterOf_X_ROW !=matrixNum||
+            //if (!bingo)
+            //    if (counterOf_X_ROW != matrixNum ||
             // counterOf_O_ROW != matrixNum ||
             // counterOf_X_COLL != matrixNum ||
             // counterOf_O_COLL != matrixNum ||
             // counterOf_X_Diagonal != matrixNum ||
             // counterOf_O_Diagonal != matrixNum)
-            //    result= (- 1);
+            //{ result = 1; bingo = true; }
             //else
             //    result = 0;
             return result;
