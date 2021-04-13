@@ -1,7 +1,0 @@
-C:\Users\jennek\source\repos\ConsoleApp_Telos_XO\ConsoleApp_Telos_XO\bin\Debug\ConsoleApp_Telos_XO.exe.config
-C:\Users\jennek\source\repos\ConsoleApp_Telos_XO\ConsoleApp_Telos_XO\bin\Debug\ConsoleApp_Telos_XO.exe
-C:\Users\jennek\source\repos\ConsoleApp_Telos_XO\ConsoleApp_Telos_XO\bin\Debug\ConsoleApp_Telos_XO.pdb
-C:\Users\jennek\source\repos\ConsoleApp_Telos_XO\ConsoleApp_Telos_XO\obj\Debug\ConsoleApp_Telos_XO.csprojAssemblyReference.cache
-C:\Users\jennek\source\repos\ConsoleApp_Telos_XO\ConsoleApp_Telos_XO\obj\Debug\ConsoleApp_Telos_XO.csproj.CoreCompileInputs.cache
-C:\Users\jennek\source\repos\ConsoleApp_Telos_XO\ConsoleApp_Telos_XO\obj\Debug\ConsoleApp_Telos_XO.exe
-C:\Users\jennek\source\repos\ConsoleApp_Telos_XO\ConsoleApp_Telos_XO\obj\Debug\ConsoleApp_Telos_XO.pdb
